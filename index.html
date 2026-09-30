@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A1Salle Store</title>
+  <!-- Обязательный SDK Telegram -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: var(--tg-theme-bg-color, #ffffff);
+      color: var(--tg-theme-text-color, #000000);
+    }
+    button {
+      padding: 10px 18px;
+      background: var(--tg-theme-button-color, #2481cc);
+      color: var(--tg-theme-button-text-color, #ffffff);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Добро пожаловать в A1Salle</h1>
+  <p>Каталог тарифов, VPN и подписок</p>
+  <button id="main-btn">Купить</button>
+
+  <script>
+    const tg = window.Telegram.WebApp;
+    tg.ready();
+    tg.expand(); // Раскрывает приложение на весь экран
+
+    document.getElementById('main-btn').addEventListener('click', () => {
+      tg.showAlert("Вы нажали кнопку покупки!");
+    });
+  </script>
+</body>
+</html>
